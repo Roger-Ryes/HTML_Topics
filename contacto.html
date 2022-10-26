@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Ejercicio practico</title>
+</head>
+<body>
+	<!--ENCABEZADO-->
+	<h1>Mi primera web</h1>
+	<hr/>
+	
+	<!--LISTADO MENU-->
+	<ul>
+		<li><a href="index.html" title="Inicio"> Inicio </a></li>
+		<li><a href="contenido.html" title="contenido"> Contenidos </a></li>
+		<li><a href="contacto.html" title="contacto"> Contacto </a></li>
+	</ul>
+	<hr/>
+
+	<!--CONTENIDO DE CONTACTO.HTML-->
+	<h2>Contacto</h2>
+	<form>
+		<p>
+		<label for="nombre">Nombre</label>
+		<input type="Text" name="nombre" placeholder="Ingresar Nombre">
+		</p>
+		<p>
+		<label for="biografia">Biografia</label>
+		<textarea name="biografia"></textarea>  
+		</p>
+		
+		<p>
+		<!--Radio button-->
+		<input type="Radio" value="hombre" name="genero">Hombre<br/>
+		<input type="Radio" value="mujer" name="genero">Mujer<br/>
+		<input type="Radio" value="ninguno" name="genero">Otros<br/>
+
+		</p>
+		<!--Selector-->
+		<select name="Edad">
+			<option value="edad1">Mayor de edad</option>
+			<option value="edad2">Adulto</option>
+			<option value="edad3">Mayor a 65</option>
+		</select>
+		
+		<p>
+		<input type="submit" name="Enviar">
+		</p>
+	</form>
+
+	
+</body>
+</html>
