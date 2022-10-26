@@ -1,0 +1,173 @@
+<!--ESPECIFICA QUE VERSION DE HTML SE USA-->
+<!DOCTYPE html>
+<html lang="es"><!--inicio de html / lang(lenguaje)="es(español)"-->
+	<head> <!--inicio Cabezera iran los metadatos es decir da un titulo a la pagina-->
+		<title>Mi primera web</title> <!--Da el titulo de la cabecera-->
+	</head> <!--Fin de cabezera-->
+	<body> <!--Cuerpo de la pagina web-->
+		<h1>Titulo de mi web</h1> <!--Cabezera tipo1-->
+			<!--Solo puede existir un h1 no dos
+				Ya que es el titulo con el que se va a buscar a la pagina-->
+		<h2>Bienvenido a mi web</h2> <!--Cabezera tipo2, hasta tipo6-->
+			<!--Puede existir mas de un h2 igual con h3, h4....h6-->
+		<!--ETIQUETAS DE TEXTO-->
+		<p> <!--parrafo-->
+			hola esto es un parrafo para mi pagina
+		</p>
+		<p> <!--parrafo-->
+			segundo parrafo para mi pagina puede existir muchos como deseemos 
+		</p>
+		<p> <!--parrafo-->
+			Para mi tercer parrafo <br/> Se a agregado un salto de linea solo con el comando <br/> como no contiene ningun valor se lo termina con la barra diagonal /
+		</p>
+		<p> <!--parrafo-->
+			Cuarto parrafo que tambien es util es dar un salto de linea <hr/> Y ademas pinta una linea entre el salto de linea  
+		</p>
+		<hr/>
+		<h2>Tipo de texto</h2>
+			<p> <!--parrafo-->
+				ahora en este parrafo <strong> Se agregara negrillas</strong> con el comando "strong".<br/> Tambien se puede colocar <em> texto en cursiva</em> con el comando "em".<br/>Otra forma de hacer que <i> un texto este cursivo</i> es utilizando "i".<br/> Ahora un comando muy util para trabajar con CSS es span <span id="resaltado" class="rojo"> que permite a este texto ser resaltado con rojo </span> pero se requiere de CSS para funcionar.
+			</p>
+			<p>
+				Para mostrar un texto como sitado <blockquote> Se utiliza el comando blockquote que da un formato como sitado</blockquote>
+			</p>
+		<hr/>
+		<h2>Listado</h2>
+			<!--ETIQUETAS DE LISTAS-->
+		<p>Se realiza un listado ordenado:
+			<!--Listado Ordenado-->
+			<ol>
+				<li>listNumero1</li>
+				<li>ListNumero2</li>
+				<li>listNumero3</li>
+			</ol>
+			Ahora se tiene una lista desordenado:
+			<ul>
+				<li>listNumero1</li>
+				<li>ListNumero2</li>
+				<li>listNumero3</li>				
+			</ul>
+			Se puede crear una lista dentro de otra lista:
+			<ol>
+				<li>listNumero1</li>
+					<ul>
+						<li>SublistaA</li>
+						<li>SublistaB</li>
+					</ul>
+				<li>ListNumero2</li>
+					<ul>
+						<li>SublistaC</li>
+					</ul>
+				<li>listNumero3</li>
+					<ul>
+						<li>SublistaC</li>
+					</ul>				
+			</ol>
+		</p>
+		<hr/>
+		<h2>DESCRIPTIVE TAGS</h2>
+			<p>HTML5 introduces more descriptive HTML tags. These include <strong>main, header, footer, nav, video, article, section and others.</strong></stronge></p>
+
+	<!--Link internal-->
+		<h2>Link to Internal Sections</h2>
+		<a href="#footer-page">Footer</a>
+
+	<!--Image-->
+		<h2>Imagenes en HTML</h2>
+			<img src="C:\Users\roger_000\Desktop\DESARROLLO PAG WEB\HTML\imagenes\user32.jpg" alt="Imange de una bici" title="Foto de bici" width="75px" height="75px"> <!--
+				src="" direccion que contiene la imagen
+				dos metodo ruta estatica y ruta relativa
+				alt="" descripcion de imangen
+				title="" Indica el titulo
+			--> 
+			<img src="imagenes\microchip.png" alt="Imange de un chip" title="Foto de chip" width="150px" height="150px"> 
+		<hr/>
+		<!--TABLAS-->
+		<h2>Tablas</h2> <!--Organiza contenido-->
+			<p> Tabla sin borde </p>
+			<table>
+				<tr> <!--fila-->
+					<td>Nombre</td><!--columna-->
+					<td>Apellido</td>
+					<td>Pais</td>
+				</tr>
+				<tr> <!--fila-->
+					<td>roger</td><!--columna-->
+					<td>reyes</td>
+					<td>ecuador</td>
+				</tr>
+			</table>
+			<p> Tabla con borde y pintado </p>
+			<table border="1">
+				<tr> <!--fila-->
+					<th>Nombre</th><!--columna pintado-->
+					<th>Apellido</th>
+					<th>Pais</th>
+				</tr>
+				<tr> <!--fila-->
+					<td>Steven</td><!--columna-->
+					<td>reyes</td>
+					<td>ecuador</td>
+				</tr>
+			</table>
+
+			<p> Para expandir la columna</p>
+			<table border="2">
+				<tr> <!--fila-->
+					<th>Nombre</th><!--columna pintado-->
+					<th>Apellido</th>
+					<th>Pais</th>
+				</tr>
+				<tr> <!--fila-->
+					<td>Steven</td><!--columna-->
+					<td colspan="2">reyes</td> <!--de 2 columnas-->
+					<td>ecuador</td>
+				</tr>
+			</table>
+		<hr/>
+
+		<!--FORMULARIOS-->
+		<h2>Formulario</h2>
+			<form>
+				<p>Campo de texto</p>
+					<label for="nombre">Nombre</label> 
+					<!--Nombre que tendra el campo indicado en la pagina
+						for="" indica de que campo pertenece-->
+					 <input type="texto" name="nombre" placeholder="Escribe tu nombre"/>
+					 <!--
+					 	type="" describe que sera del tipo texto
+					 	name="" nombre del campo
+					 	placeholser="" texto en el campo
+					 -->
+				<p>Otro campo el textArea</p>
+					 <label for="descripcion">Descripcion</label>
+					 <textarea name="descripcion"></textarea>
+
+				<p>Radio button</p>
+					<input type="Radio" name="genero" value="hombre"> Hombre <br/>
+					<input type="Radio" name="genero" value="mujer"> Mujer <br/>
+					<input type="Radio" name="genero" value="nada"> Nada <br/>
+
+				<p>Select</p>
+					<select name="genero2 ">
+						<option value="hombre">Hombre</option>
+						<option value="mujer">Mujer</option>
+						<option value="nada">Nada</option>
+					</select><br>
+
+				<p>Valor por defecto</p>
+				<label for="exam1">
+					<input type="Radio" name="value1" id="exam1" checked="val1">Valor1
+				</label>
+				<label for="exam2">
+					<input type="Radio" name="value2" id="exam2">Valor2
+				</label>
+
+
+				<p>Pintar el boton</p>
+					<input type="submit" value="Enviar formulario">
+			</form>
+
+			<h2 id="footer-page">Pie de pagina</h2>
+	</body>
+</html><!--Fin de html-->
