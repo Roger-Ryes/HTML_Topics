@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			background: #ccc;
+		}
+		#focusTabindex:focus{
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<header><h1>HTML WCAG</h1></header>
+	<main>
+	<ARTICLE>
+		<section>
+		<h2>Jump Straight to the Content Using the main Element</h2>
+		<p>These tags include main, header, footer, nav, article, and section, among others.</p>
+		<p>A browser renders these elements similarly to the humble div. However, using them where appropriate <strong>gives additional meaning in your markup.</strong></p>
+
+		<h2>The "main" element </h2>
+		<p>is used to wrap the main content, and there should be only one per page.</p>
+
+		<h2>article</h2>
+		<p> article is a sectioning element, and is used to wrap independent, self-contained content. </p>
+		<p>The tag works well with blog entries, forum posts, or news articles.</p>
+
+		<h2>article and section</h2>
+		<p>An "article" is for standalone content, and a "section" is for grouping thematically related content. </p>
+		<p>if a book is the "article", then each chapter is a "section". When there's no relationship between groups of content, then use a "div".</p>
+		<p>
+		"div" - groups content<br>
+		"section" - groups related content<br>
+		"article" - groups independent, self-contained content<br>
+		</p>
+
+		<h2>"header" tag</h2>
+		<p>It's used to wrap introductory information or navigation links for its parent tag and works well around content that's repeated at the top on multiple pages.</p>
+		<p>"header" shares the embedded landmark feature you saw with main, allowing assistive technologies to quickly navigate to that content.</p>
+		<p>The "header" is meant for use in the body tag of your HTML document.<br> 
+		This is different than the "head" element, which contains the page's title, meta information, etc.</p>
+
+		<h2>The "nav" element</h2>
+		<p>This tag is meant to wrap around the main navigation links in your page.</p>
+		<p>If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a nav tag as well. Using a footer (covered in the next challenge) is sufficient.</p>
+		<div>
+		<p><strong>Example</strong>
+			{header(h1)}<br>
+			{main(section(h2(article(h3);article(h3);article(h3))))}<br>
+			{footer}<br>
+		</p>
+	</div>
+			
+		</section>
+		<section>
+			<h2>Applied Accessibility:Improve Accessibility of Audio Content with the audio Element</h2>
+			<p>HTML5's audio element gives semantic meaning when it wraps sound or audio stream content in your markup.</p>
+			<p>The audio tag supports the controls attribute. This shows the browser default play, pause, and other controls, and supports keyboard functionality. </p>
+			<div>
+				<p>Example:(See ctrl+u)</p>
+				<audio id="ExampClip" controls>
+				<source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg"/>
+				<!--
+				<source src="audio/meow.mp3" type="audio/mpeg" />
+				<source src="audio/meow.ogg" type="audio/ogg"/>
+				-->
+				</audio>
+			</div>
+
+			<h2>Improve Chart Accessibility with the figure Element</h2>
+			<p>The figure element, along with the related figcaption. Used together, these items wrap a visual representation (like an image, diagram, or chart) along with its caption.</p>
+			<div>
+				<p>Example</p>
+				<!--
+				<figure>
+				  <img src="roundhouseDestruction.jpeg" alt="Photo of Camper Cat executing a roundhouse kick">
+				  <br>
+				  <figcaption>
+				    Master Camper Cat demonstrates proper form of a roundhouse kick.
+				  </figcaption>
+				</figure>
+				-->
+			</div>
+
+			<h2>Improve Form Field Accessibility with the label Element</h2>
+			<p>The label tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The for attribute on a label tag explicitly associates that label with the form control and is used by screen readers.
+			</p>
+			<p>The value of the for attribute must be the same as the value of the id attribute of the form control.</p>
+			<p>Example</p>
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name">
+			</form>
+
+			<h2>Wrap Radio Buttons in a fieldset Element for Better AccessibilityPassed</h2>
+			<p>The "fieldset" tag surrounds the entire grouping of radio buttons to achieve this. It often uses a "legend" tag to provide a description for the grouping, which is read by screen readers for each choice in the "fieldset" element.</p>
+			<p>The "fieldset" wrapper and "legend" tag are not necessary when the choices are self-explanatory, like a gender selection. </p>
+			<form>
+				<fieldset>
+					<legend>Fieldset and legands tags</legend>
+					<input id="opc1" type="radio" name="opc1">
+					<label for="opc1">Begginer</label><br>
+					<input id="opc2" type="radio" name="opc2">
+					<label for="opc2">Intermediant</label><br>
+					<input id="opc3" type="radio" name="opc3">
+					<label for="opc3">Advance</label><br>
+				</fieldset>
+			</form>
+
+			<h2>Standardize Times with the HTML5 datetime Attribute</h2>
+			<p>Continuing with the date theme, HTML5 also introduced the time element along with a datetime attribute to standardize times.This is an inline element that can wrap a date or time on a page.</p>
+			<p> A valid format of that date is held by the datetime attribute.</p>
+			<label for="pickdate">Date:</label>
+			<input type="date" id="pickdate" name="date">	
+			
+			<h3>datetime</h3>
+			<p>HTML5 also introduced the "time" element along with a "datetime" attribute to standardize times. </p>
+			<p>Example</p>
+			<p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is <time datetime="2016-09-15">Thursday, September 15</time><sup>th</sup>. May the best ninja win!</p>
+
+			<h2>Improve Readability with High Contrast Text</h2>
+			<p>Low contrast between the foreground and background colors can make text difficult to read. </p>
+			<p>The Web Content Accessibility Guidelines (WCAG) <stronge>recommend at least a 4.5 to 1 contrast ratio for normal text.</stronge> The ratio is calculated by comparing the relative luminance values of two colors. This ranges from 1:1 for the same color, or no contrast, to 21:1 for white against black, the strongest contrast. </p>		
+			
+			<h2>Avoid Colorblindness Issues by Using Sufficient Contrast</h2>
+			<p> its use introduces two accessibility issues.</p> 
+			<p>First, color alone should not be used as the only way to convey important information because screen reader users won't see it.</p>
+			<p>Second, foreground and background colors need sufficient contrast so colorblind users can distinguish them.</p>
+			<p><strong>The WCAG-recommended contrast ratio of 4.5:1 applies for color use as well as gray-scale combinations.</strong></p>
+			<p>In practice, the 4.5:1 contrast ratio can be reached by shading (adding black to) the darker color and tinting (adding white to) the lighter color.</p>
+			<p>Darker (shades on the color wheel) --> are considered to be shades of blues, violets, magentas, and reds, whereas<br>lighter tinted colors --> are oranges, yellows, greens, and blue-greens.</p>
+			<p>Example</p>
+			<p> his current combination of a greenish background-color with maroon text color has a 2.5:1 contrast ratio.</p>
+			<p> color: hsl(0, 55%, 20%);<br>
+			    background-color: hsl(120, 25%, 35%);<br></p>
+			<p>Increase the background-color lightness value from 35% to 55%, and decrease the color lightness value from 20% to 15%. This improves the contrast to 5.9:1.</p>
+			<p>color: hsl(0, 55%, 15%);<br>
+    			background-color: hsl(120, 25%, 55%);<br></p>
+
+
+    		<h2>Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information</h2>
+    		<p>There are various forms of colorblindness. These can range from a reduced sensitivity to a certain wavelength of light to the inability to see color at all. <stronge>The most common form is a reduced sensitivity to detect greens.</stronge></p>
+    		<p>Close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.</p>
+    		<p>Some online color picking tools include visual simulations of how colors appear for different types of colorblindness. </p>
+
+
+    		<h2>Give Links Meaning by Using Descriptive Link Text</h2>
+    		<p> Having a list of "click here" or "read more" links isn't helpful. Instead, you should use brief but descriptive text within the a tags to provide more meaning for these users.</p>
+
+
+    		<h2>Make Links Navigable with HTML Access Keys</h2>
+    		<p>HTML offers the "accesskey" attribute to specify a shortcut key to activate or bring focus to an element. This can make navigation more efficient for keyboard-only users.</p>
+    		<p>HTML5 allows this attribute to be used on any element, but it's particularly useful when it's used with interactive ones. This includes links, buttons, and form controls.</p>
+    		<p>Examples</p>
+    			<button accesskey="b">Important Button</button>
+    		
+
+    		<h2>Use tabindex to Add Keyboard Focus to an Element</h2>
+    		<p>The HTML "tabindex" attribute has three distinct functions relating to an "element's keyboard focus". 
+    			When it's on a tag, it indicates that element can be focused on. 
+    		The value (an integer that's positive, negative, or zero) determines the behavior.</p>
+    		<p>Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page.</p>
+    		<p>This same functionality can be given to other elements, such as div, span, and p, by placing a tabindex="0" attribute on them. Here's an example:</p>
+    		<div id="focusTabindex" tabindex="1">I need keyboard focus!</div>
+
+
+
+    		<h2>Use tabindex to Specify the Order of Keyboard Focus for Several Elements</h2>
+    		<p>The tabindex attribute also specifies the exact tab order of elements.</p>
+    		<p>Setting a "tabindex="1"" will bring keyboard focus to that element first. Then it cycles through the sequence of specified "tabindex" values (2, 3, etc.), before moving to default and "tabindex="0"" items.</p>
+    		<p>It's important to note that when the tab order is set this way, it overrides the default order (which uses the HTML source).</p>
+    		<p>Here's an example:</p>
+    		<div tabindex="1">I get keyboard focus, and I get it first!</div>
+    		<div tabindex="2">I get keyboard focus, and I get it second!</div>
+
+		</section>
+	</ARTICLE>
+	</main>
+	
+
+</body>
+</html>
